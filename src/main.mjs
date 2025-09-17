@@ -5,8 +5,18 @@ import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/
 import { isInitializeRequest } from '@modelcontextprotocol/sdk/types.js'
 import { z } from 'zod'
 
+import cors from 'cors'
+
 const app = express()
 app.use(express.json())
+
+app.use(
+  cors({
+    origin: '*',
+    exposedHeaders: ['Mcp-Session-Id'],
+    allowedHeaders: ['Content-Type', 'mcp-session-id'],
+  }),
+)
 
 const transports = {}
 

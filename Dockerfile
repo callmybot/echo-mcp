@@ -1,7 +1,6 @@
 FROM node:24-slim AS base
 ENV NODE_NO_WARNINGS=1
 RUN apt-get update && \
-  apt-get upgrade -y && \
   npm install -g pm2 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
