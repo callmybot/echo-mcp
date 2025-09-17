@@ -2,6 +2,8 @@ FROM node:24-slim AS base
 ENV NODE_NO_WARNINGS=1
 RUN mkdir /app && \
   chown node:node /app
+ENV PORT=80
+EXPOSE $PORT
 WORKDIR /app
 
 FROM base AS dev
