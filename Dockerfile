@@ -15,7 +15,7 @@ VOLUME [ "/app" ]
 ENTRYPOINT [ "./entrypoint.sh" ]
 CMD ["pm2-runtime", "ecosystem.dev.config.cjs"]
 
-FROM base AS prod
+FROM base
 COPY ecosystem.prod.config.cjs package.json ./
 RUN npm install --omit=dev
 COPY src src
