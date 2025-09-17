@@ -5,6 +5,7 @@ import { z } from 'zod'
 const server = new McpServer({
   name: 'echo-server',
   version: '1.0.0',
+  configSchema: z.object({}),
 })
 
 server.registerTool(
