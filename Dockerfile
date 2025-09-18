@@ -7,6 +7,7 @@ RUN apt-get update && \
   mkdir /app && \
   chown node:node /app
 ENV PORT=80
+ENV TRANSPORT=http
 EXPOSE $PORT
 WORKDIR /app
 
