@@ -4,3 +4,16 @@ build:
   dockerBuildPath: '.'
 startCommand:
   type: 'http'
+  configSchema:
+    type: object
+    properties:
+      serverToken:
+        type: string
+        description: Server access token
+      caseSensitive:
+        type: boolean
+        description: Whether character matching should be case sensitive
+        default: false
+  exampleConfig:
+    serverToken: 'your-server-token'
+    caseSensitive: false
